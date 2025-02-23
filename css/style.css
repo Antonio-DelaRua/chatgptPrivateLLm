@@ -25,7 +25,7 @@ h1 {
 main {
     width: 700px;
     max-width: 100%;
-    height: 70vh;
+    height: 65vh;
 
     background: #fff;
     border: 1px solid #ccc;
@@ -49,12 +49,7 @@ ul {
     background: -webkit-linear-gradient(to right, #00c9ff, #92fe9d); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #00c9ff, #92fe9d);
     border-radius: 14px;
-    
-    box-sizing: border-box;
-    margin-top: 10px;
-    
-    margin-right: 0px;
-    
+ 
 }
 
 
@@ -111,10 +106,11 @@ form {
     display: flex;
 
     input {
+        
         border-radius: 999999px;
         flex-grow: 1;
         border: 0;
-        padding: 12px;
+        padding: 10px;
         margin-right: 8px;
         border: 1px solid #09c7ae;
         
