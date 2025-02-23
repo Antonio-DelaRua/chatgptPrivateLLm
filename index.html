@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ChatGPT Private</title>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
-  
+
 </head>
 
 <body>
@@ -30,14 +30,15 @@
 
   <template id="message-template">
     <li class="message">
-                   
+
       <div class="titu"><span></span></div>
-      <div class="titu2"><p></p> </div>
+      <div class="titu2"><p></p></div>
       
+
     </li>
   </template>
 
-   
+
   <script type="module">
     import { CreateWebWorkerMLCEngine } from "https://cdn.jsdelivr.net/npm/@mlc-ai/web-llm@0.2.46/+esm"
 
@@ -51,6 +52,8 @@
     const $button = $('button')
     const $info = $('small')
     const $loading = $('.loading')
+
+    
 
     let messages = []
     let end = false
@@ -133,10 +136,10 @@
       $who.textContent = sender === 'bot' ? 'GPT' : 'Tú'
       $newMessage.classList.add(sender)
       if (sender === 'bot') {
-    $who.style.color = 'black'; // or any other color you prefer
-  } else {
-    $who.style.color = '#09c7ae'; // or any other color you prefer
-  }
+        $who.style.color = 'black'; // or any other color you prefer
+      } else {
+        $who.style.color = '#09c7ae'; // or any other color you prefer
+      }
 
       $messages.appendChild($newMessage)
 
@@ -144,27 +147,27 @@
 
       return $text
     }
-    
+
 
     function formatCodeInMessage($messageElement) {
-  let content = $messageElement.textContent;
+      let content = $messageElement.textContent;
 
-  // Formatear bloques de código (``` código ```)
-  const codeBlocks = content.match(/```[\s\S]*?```/g);
-  if (codeBlocks) {
-    codeBlocks.forEach(block => {
-      const codeContent = block.replace(/```/g, '');
-      const formattedBlock = `<pre><code><strong>${codeContent}</strong></code></pre>`;
-      content = content.replace(block, formattedBlock);
-    });
-  }
+      // Formatear bloques de código (``` código ```)
+      const codeBlocks = content.match(/```[\s\S]*?```/g);
+      if (codeBlocks) {
+        codeBlocks.forEach(block => {
+          const codeContent = block.replace(/```/g, '');
+          const formattedBlock = `<pre><code><strong>${codeContent}</strong></code></pre>`;
+          content = content.replace(block, formattedBlock);
+        });
+      }
 
-  // Formatear texto en negrita (**texto** → <strong>texto</strong>)
-  content = content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      // Formatear texto en negrita (**texto** → <strong>texto</strong>)
+      content = content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
-  // Reemplazar el contenido del elemento con el nuevo contenido formateado
-  $messageElement.innerHTML = content;
-}
+      // Reemplazar el contenido del elemento con el nuevo contenido formateado
+      $messageElement.innerHTML = content;
+    }
   </script>
 </body>
 
