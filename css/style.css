@@ -222,3 +222,31 @@ code {
     font-family: "Comic Sans MS";
 
 }
+
+@media (max-width: 600px) {
+    
+    h1 {
+        font-size: 28px;
+    }
+
+    main {
+        
+        height: 60vh;
+        width: 95%;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    form input {
+        width: 100%;
+        border-radius: 0;
+       
+    }
+
+    form button {
+        width: 100%;
+        border-radius: 0;
+    }
+}
