@@ -30,6 +30,7 @@
 
   <template id="message-template">
     <li class="message">
+                   
       <div class="titu"><span></span></div>
       <div class="titu2"><p></p> </div>
       
@@ -131,6 +132,11 @@
       $text.textContent = text
       $who.textContent = sender === 'bot' ? 'GPT' : 'Tú'
       $newMessage.classList.add(sender)
+      if (sender === 'bot') {
+    $who.style.color = 'black'; // or any other color you prefer
+  } else {
+    $who.style.color = '#09c7ae'; // or any other color you prefer
+  }
 
       $messages.appendChild($newMessage)
 
@@ -138,6 +144,7 @@
 
       return $text
     }
+    
 
     function formatCodeInMessage($messageElement) {
   let content = $messageElement.textContent;
