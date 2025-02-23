@@ -1,0 +1,210 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-image: url('/image/nobt.png');
+
+    display: grid;
+    place-content: center;
+    height: 100dvh;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px #333; /* Add some depth with a text shadow */
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2); /* Add some dimension with a box shadow */
+    border-radius: 5px; /* Add some visual interest with a subtle border radius */
+    background: #43cea2; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #43cea2, #185a9d); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #43cea2, #185a9d); /* W3
+    padding: 10px; /* Add some padding to create some breathing room */
+    margin-bottom: 20px; /* Add some margin to create some space between the title and the rest of the content */
+  }
+
+main {
+    width: 700px;
+    max-width: 100%;
+    height: 70vh;
+
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    margin-bottom: 16px;
+
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+}
+.titu{
+    background: #00c9ff; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #00c9ff, #92fe9d); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #00c9ff, #92fe9d);
+    border-radius: 14px;
+    margin: 10px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 0px;
+    
+}
+
+
+.message {
+    display: flex;
+    flex-direction: column;
+    margin: 4px 0;
+    padding: 4px 8px;
+
+
+    span {
+        width: 40px;
+        height: 40px;
+        background: #e0dada;
+        font-size: 12px;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: #555;
+
+        background-position: center;
+        /* Centramos el background */
+        color: blue;
+        /* Cambiamos el color de la letra a azul */
+    }
+
+    p {
+        border: 1px solid #e7e4e4; 
+        border-radius: 5px;
+        padding: 6px 12px;
+        margin-top: 4px;
+        background-color: rgb(233, 236, 236);
+        
+    }
+
+    &.user {
+        font: bold;
+        border-radius: 14px;
+
+
+
+    }
+
+    &.bot {
+        align-self: flex-start;
+        
+
+
+    }
+}
+
+form {
+    display: flex;
+
+    input {
+        border-radius: 999999px;
+        flex-grow: 1;
+        border: 0;
+        padding: 8px;
+        margin-right: 8px;
+        border: 1px solid #09c7ae;
+        
+        
+    }
+
+   
+
+    button {
+        background: #43cea2; /* fallback for old browsers */
+        border: 0;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        padding: 8px;
+        transition: background .3s ease;
+
+        &[disabled] {
+            background: #ccc;
+            opacity: .6;
+            pointer-events: none;
+        }
+
+        &:hover {
+            background: rgb(0, 104, 173);
+        }
+    }
+}
+
+small {
+    font-size: 10px;
+    color: #ffffff;
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 400px;
+}
+
+.loading {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30%;
+
+    i {
+        pointer-events: none;
+        width: 2.5em;
+        height: 2.5em;
+        border: 0.4em solid transparent;
+        border-color: #eee;
+        border-top-color: #3E67EC;
+        border-radius: 50%;
+        animation: loadingspin 1s linear infinite;
+    }
+
+    h4 {
+        color: #444;
+        margin-bottom: 8px;
+    }
+
+    h5 {
+        font-weight: 400;
+        margin: 0;
+        font-size: 10px;
+        opacity: .4;
+    }
+}
+
+@keyframes loadingspin {
+    100% {
+        transform: rotate(360deg)
+    }
+
+}
+
+pre {
+    font-family: "Monaco", "Consolas", "Lucida Console", monospace;
+    background-color: #ffff;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+code {
+    font-family: monospace;
+    
+}
+
