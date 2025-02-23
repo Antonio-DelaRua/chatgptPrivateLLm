@@ -140,21 +140,24 @@
     }
 
     function formatCodeInMessage($messageElement) {
-      const content = $messageElement.textContent
-      const codeBlocks = content.match(/```[\s\S]*?```/g)
+  let content = $messageElement.textContent;
 
-      if (codeBlocks) {
-        let formattedContent = content
+  // Formatear bloques de código (``` código ```)
+  const codeBlocks = content.match(/```[\s\S]*?```/g);
+  if (codeBlocks) {
+    codeBlocks.forEach(block => {
+      const codeContent = block.replace(/```/g, '');
+      const formattedBlock = `<pre><code><strong>${codeContent}</strong></code></pre>`;
+      content = content.replace(block, formattedBlock);
+    });
+  }
 
-        codeBlocks.forEach(block => {
-          const codeContent = block.replace(/```/g, '')
-          const formattedBlock = `<pre><code>${codeContent}</code></pre>`
-          formattedContent = formattedContent.replace(block, formattedBlock)
-        })
+  // Formatear texto en negrita (**texto** → <strong>texto</strong>)
+  content = content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
-        $messageElement.innerHTML = formattedContent
-      }
-    }
+  // Reemplazar el contenido del elemento con el nuevo contenido formateado
+  $messageElement.innerHTML = content;
+}
   </script>
 </body>
 
