@@ -211,7 +211,7 @@ small {
 }
 
 pre {
-    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+    font-family: "Source Code Pro", monospace;
     background-color: #ffff;
     padding: 10px;
     border-radius: 5px;
@@ -219,7 +219,7 @@ pre {
 }
 
 code {
-    font-family: "Comic Sans MS";
+    font-family: "Source Code Pro";
 
 }
 

@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ChatGPT Private</title>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
 
 </head>
 
@@ -157,13 +159,10 @@
       if (codeBlocks) {
         codeBlocks.forEach(block => {
           const codeContent = block.replace(/```/g, '');
-          const formattedBlock = `<pre><code><strong>${codeContent}</strong></code></pre>`;
+          const formattedBlock = `<pre><code>${codeContent}</code></pre>`;
           content = content.replace(block, formattedBlock);
         });
       }
-
-      // Formatear texto en negrita (**texto** → <strong>texto</strong>)
-      content = content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
       // Reemplazar el contenido del elemento con el nuevo contenido formateado
       $messageElement.innerHTML = content;
